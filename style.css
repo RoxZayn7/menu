@@ -179,6 +179,7 @@ nav a:hover {
 /* Footer */
 
 footer {
+    width: auto;
     text-align: center;
     padding: 20px;
     background: black;
@@ -230,6 +231,11 @@ footer {
         width: 100%;
     }
 
+    .banner {
+        width: 100%;
+        overflow: hidden;
+    }
+
     .banner img {
         width: 100%;
         height: auto;
@@ -278,12 +284,21 @@ footer {
     }
 
     nav ul {
+        flex-direction: row;
+        width: 100%;
+        text-align: center;
         gap: 10px;
+    }
+
+    .banner {
+        width: 100%;
+        overflow: hidden;
     }
 
     .banner img {
         width: 100%;
         height: auto;
+        display: block;
     }
 
     .menu-card {
@@ -301,5 +316,17 @@ footer {
 
     p {
         font-size: 0.95rem;
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+    .menu-card {
+        width: 45%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
     }
 }
