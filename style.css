@@ -16,7 +16,6 @@ body {
 
 /* Navbar */
 header {
-    position: sticky;
     background: rgba(155, 22, 22, 0.9);
     top: 0;
     z-index: 1000;
@@ -91,6 +90,10 @@ nav a:hover {
     padding: 20px;
     background-color: rgba(155, 22, 22, 0.9);
     border-radius: 8px;
+}
+
+nav h1 {
+    text-align: center;
 }
 
 .hero h2 {
@@ -556,6 +559,10 @@ footer {
 
     .banner-content {
         padding: 15px;
+    }
+
+    nav h1 {
+        text-align: center;
     }
 
     .hero h2 {
