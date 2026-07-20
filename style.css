@@ -45,6 +45,23 @@ nav a:hover {
     color: orange;
 }
 
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: white;
+    margin: 7px 0;
+    border-radius: 10px;
+    transition: .4s;
+}
+
 /* Hero */
 
 .banner {
@@ -209,6 +226,31 @@ footer {
     }
 }
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg)
+    tranlate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45des)
+    translate(8px, -8px);
+}
+
 
 /* Responsive */
 
@@ -217,8 +259,28 @@ footer {
 @media(max-width: 768px) {
     nav {
         flex-direction: columnm;
+        flex-wrap: wrap;
         gap: 15px;
         padding: 15px;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        background: rgba(155, 22, 22, 0.9);
+        margin-top: 15px;
+        padding: 20px 0;
+        animation: slideDown .4s;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
     }
 
     nav ul {
@@ -231,6 +293,10 @@ footer {
     nav ul li {
         width: 100%;
         text-align: center;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .banner img {
@@ -383,6 +449,152 @@ footer {
     footer p {
         font-size: 0.85rem;
         line-height: 1.5;
+    }
+}
+
+/* Medium Phone */
+
+@media (max-width: 375px) {
+    nav {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .banner-content {
+        padding: 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .menu-section {
+        padding: 35px 10px;
+    }
+
+    .menu-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .menu-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .menu-card img {
+        height: 180px;
+    }
+
+    .menu-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .menu-card p {
+        font-size: 0.95rem;
+    }
+
+    .menu-overlay button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+/* Large Phone */
+
+@media (max-width: 425px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .banner-section {
+        min-height: 220px;
+        background-attachment: scroll;
+    }
+
+    .banner-content {
+        padding: 15px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .menu-section {
+        padding: 40px 15px;
+    }
+
+    .menu-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .menu-card img {
+        height: 200px
+    }
+
+    footer {
+        width: 100%;
+        padding: 18px;
+    }
+
+    footer p {
+        font-size: 0.95rem;
     }
 }
 
